@@ -8,7 +8,6 @@ import datetime # To Parse input DateTime into Python Date Time Object
 
 from .models import CustomUser, Staffs, Courses, Subjects, Students, Attendance, AttendanceReport, LeaveReportStudent, FeedBackStudent, StudentResult
 
-
 def student_home(request):
     print("idhar aa chuka hu")
     print(request.user.id)
@@ -44,7 +43,6 @@ def student_home(request):
         "data_absent": data_absent
     }
     return render(request, "student_template/student_home_template.html")
-
 
 def student_view_attendance(request):
     student = Students.objects.get(admin=request.user.id) # Getting Logged in Student Data
